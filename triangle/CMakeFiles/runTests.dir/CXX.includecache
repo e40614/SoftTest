@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/SoftTest/triangle/main.cpp
+gtest/gtest.h
+-
+triangle.h
+/root/SoftTest/triangle/triangle.h
+
+/root/SoftTest/triangle/triangle.h
+
