@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/root/SoftTest/triangle/main.cpp
-gtest/gtest.h
--
+/root/SoftTest/triangle/triangle.cpp
 triangle.h
 /root/SoftTest/triangle/triangle.h
 
