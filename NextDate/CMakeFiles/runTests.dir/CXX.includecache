@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/SoftTest/NextDate/NextDate.h
+string
+-
+
+/root/SoftTest/NextDate/main.cpp
+gtest/gtest.h
+-
+string
+-
+NextDate.h
+/root/SoftTest/NextDate/NextDate.h
+
