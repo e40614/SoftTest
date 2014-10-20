@@ -4,6 +4,7 @@ using namespace std;
 
 float Comission(int lock , int stock, int barrel) 
 {
+	if(lock < 1 || lock > 70 || stock < 1 || stock > 80 || barrel < 1 || barrel > 90) return -1;
 	float comission = 0;
 	float lockPrice = 45,stockPrice = 30,barrelPrice = 25;
 	float sales = 0;
