@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/SoftTest/Comission/Comission.h
+
+/root/SoftTest/Comission/main.cpp
+gtest/gtest.h
+-
+Comission.h
+/root/SoftTest/Comission/Comission.h
+

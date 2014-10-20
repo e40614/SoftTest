@@ -1,0 +1,1 @@
+/root/SoftTest/Comission/CMakeFiles/runTests.dir
