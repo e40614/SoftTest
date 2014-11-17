@@ -1,3 +1,1 @@
-#include <string>
-
-std::string NextDate(int year, int month, int day);
+char* NextDate(int year, int month, int day);

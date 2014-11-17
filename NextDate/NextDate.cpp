@@ -1,9 +1,10 @@
-#include <iostream>
-#include <sstream>
-#include <string>
+//#include <iostream>
+//#include <sstream>
+#include <string.h>
 #include "NextDate.h"
+#include <stdio.h>
 
-using namespace std;
+extern char date[11];
 
 bool Leap(int year)
 {
@@ -11,8 +12,19 @@ bool Leap(int year)
 	else return false;
 }
 
-string DateToStr(int year, int month, int day) 
+void DateToStr(int year, int month, int day) 
 {
+	char tmp[5];
+	char* slash = "/";
+	sprintf(tmp,"%d",year);
+	strcat(date,tmp);
+	strcat(date,slash);
+	sprintf(tmp,"%d",month);
+	strcat(date,tmp);
+	strcat(date,slash);
+	sprintf(tmp,"%d",day);
+	strcat(date,tmp);
+/*
 	string tomorrow="";
 	stringstream temp;
 	string buffer;
@@ -32,13 +44,14 @@ string DateToStr(int year, int month, int day)
 	temp >> buffer;
 	tomorrow+=buffer;
 	return tomorrow;
+*/
 }
 
-string NextDate(int y, int m, int d) 
-{
-	string tomorrow = "";
+char* NextDate(int y, int m, int d) 
+{	
+	date[0] = '\0';
 	int year = y,month = m,day = d;
-	if(y<1993 || y>2014 || m<1 || m>12 || d<1 || d>31) return tomorrow;
+	if(y<1993 || y>2014 || m<1 || m>12 || d<1 || d>31) return date;
 	switch(m)
 	{
 		case 1:
@@ -53,7 +66,7 @@ string NextDate(int y, int m, int d)
 				month++;
 			
 			}
-			else return tomorrow;
+			else return date;
 			break;
 		case 4:
 		case 6:
@@ -64,7 +77,7 @@ string NextDate(int y, int m, int d)
 				day = 1;
 				month++;
 			}
-			else return tomorrow;
+			else return date;
 			break;
 		case 12:
 			if(d < 31) day++;
@@ -74,7 +87,7 @@ string NextDate(int y, int m, int d)
 				year++;
 			
 			}
-			else return tomorrow;
+			else return date;
 			break;
 		case 2:
 			if(d < 28) day++;
@@ -90,13 +103,13 @@ string NextDate(int y, int m, int d)
 					day = 1;
 					month = 3;
 				}
-				else return tomorrow;
+				else return date;
 			}
-			else return tomorrow;
+			else return date;
 			break;
 	}
 	
-	tomorrow+=DateToStr(year, month, day);
-	return tomorrow;
+	DateToStr(year, month, day);
+	return date;
 	
 }
