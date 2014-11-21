@@ -59,6 +59,48 @@ TEST(triangle, DecisionTable) {
 	ASSERT_EQ(2, triangle(3, 2, 2));
 	ASSERT_EQ(3, triangle(3, 4, 5));
 }
+
+TEST(PathTesting, C0) {
+	ASSERT_EQ(0, triangle(0, 5, 5));
+	ASSERT_EQ(1, triangle(5, 5, 5));
+	ASSERT_EQ(2, triangle(2, 2, 3));
+	ASSERT_EQ(3, triangle(3, 4, 5));
+	ASSERT_EQ(0, triangle(3, 3, 6));
+}
+
+TEST(PathTesting, C1) {
+	ASSERT_EQ(0, triangle(0, 5, 5));
+	ASSERT_EQ(1, triangle(5, 5, 5));
+	ASSERT_EQ(2, triangle(2, 2, 3));
+	ASSERT_EQ(3, triangle(3, 4, 5));
+	ASSERT_EQ(0, triangle(3, 3, 6));
+}
+
+TEST(PathTesting, C2) {
+	ASSERT_EQ(0, triangle(0, 5, 5));
+	ASSERT_EQ(1, triangle(5, 5, 5));
+	ASSERT_EQ(2, triangle(2, 2, 3));
+	ASSERT_EQ(3, triangle(3, 4, 5));
+	ASSERT_EQ(0, triangle(3, 3, 6));
+}
+
+TEST(PathTesting, MCDC) {
+	ASSERT_EQ(0, triangle(0, 5, 5));
+	ASSERT_EQ(0, triangle(201, 5, 5));
+	ASSERT_EQ(0, triangle(5, 0, 5));
+	ASSERT_EQ(0, triangle(5, 201, 5));
+	ASSERT_EQ(0, triangle(5, 5, 0));
+	ASSERT_EQ(0, triangle(5, 5, 201));
+	ASSERT_EQ(0, triangle(3, 3, 6));
+	ASSERT_EQ(0, triangle(3, 6, 3));
+	ASSERT_EQ(0, triangle(6, 3, 3));
+	ASSERT_EQ(1, triangle(5, 5, 5));
+	ASSERT_EQ(2, triangle(2, 2, 3));
+	ASSERT_EQ(2, triangle(2, 3, 3));
+	ASSERT_EQ(2, triangle(2, 2, 3));
+	ASSERT_EQ(3, triangle(3, 4, 5));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
