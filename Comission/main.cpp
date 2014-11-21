@@ -48,6 +48,39 @@ TEST(Comission, EquivalenceClass_SR) {
 
 }
 
+TEST(PathTesting, C0) {
+	ASSERT_EQ(-1, Comission(0, 40, 50));
+	ASSERT_EQ(1420, Comission(70, 80, 90));
+	ASSERT_EQ(260, Comission(20, 20, 20));
+	ASSERT_EQ(10, Comission(1, 1, 1));
+}
+
+TEST(PathTesting, C1) {
+	ASSERT_EQ(-1, Comission(0, 40, 50));
+	ASSERT_EQ(1420, Comission(70, 80, 90));
+	ASSERT_EQ(260, Comission(20, 20, 20));
+	ASSERT_EQ(10, Comission(1, 1, 1));
+}
+
+TEST(PathTesting, C2) {
+	ASSERT_EQ(-1, Comission(0, 40, 50));
+	ASSERT_EQ(1420, Comission(70, 80, 90));
+	ASSERT_EQ(260, Comission(20, 20, 20));
+	ASSERT_EQ(10, Comission(1, 1, 1));
+}
+
+TEST(PathTesting, MCDC) {
+	ASSERT_EQ(-1, Comission(0, 40, 50));
+	ASSERT_EQ(-1, Comission(71, 40, 50));
+	ASSERT_EQ(-1, Comission(30, 0, 50));
+	ASSERT_EQ(-1, Comission(30, 81, 50));
+	ASSERT_EQ(-1, Comission(30, 40, 0));
+	ASSERT_EQ(-1, Comission(30, 40, 91));
+	ASSERT_EQ(1420, Comission(70, 80, 90));
+	ASSERT_EQ(260, Comission(20, 20, 20));
+	ASSERT_EQ(10, Comission(1, 1, 1));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
